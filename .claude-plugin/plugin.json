@@ -1,0 +1,16 @@
+{
+  "name": "phoenix-blue-intelligence",
+  "version": "1.0.0",
+  "description": "Phoenix Security Blue vulnerability intelligence. Scan dependencies for CVEs, get evidence-backed safe-upgrade targets with a four-state confidence caveat, and measure locally whether the vulnerable function is actually called. Ships the Phoenix MCP server (27 tools).",
+  "author": {
+    "name": "Phoenix Security",
+    "email": "admin@phoenix.security"
+  },
+  "homepage": "https://phxintel.security",
+  "repository": "https://github.com/securityphoenix/phoenix-blue-ingelligence-skills",
+  "license": "MIT",
+  "keywords": [
+    "security", "vulnerability", "cve", "sca", "sbom",
+    "supply-chain", "reachability", "dependencies", "upgrade", "phoenix"
+  ]
+}

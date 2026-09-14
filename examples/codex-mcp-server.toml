@@ -1,0 +1,15 @@
+# Phoenix MCP server for Codex.
+#
+# Append to ~/.codex/config.toml, then replace the two placeholders.
+# Codex does not expand ${VARS} here, so the values are literal.
+# Keep this file out of version control once you fill it in.
+
+[mcp_servers.phoenix]
+command = "python3"
+args = ["/ABSOLUTE/PATH/TO/phoenix-blue-ingelligence-skills/scripts/phoenix_mcp_bridge.py"]
+startup_timeout_sec = 60
+
+[mcp_servers.phoenix.env]
+MCP_HTTP_URL = "https://phxintel.security/api/v1/mcp"
+MCP_API_KEY = "phx_api_power_REPLACE_ME"
+MCP_HTTP_TIMEOUT = "60"

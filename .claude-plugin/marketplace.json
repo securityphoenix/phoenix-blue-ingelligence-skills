@@ -1,0 +1,32 @@
+{
+  "name": "phoenix-blue-intelligence",
+  "description": "Phoenix Security Blue vulnerability intelligence for coding agents: library CVE scanning, safe-upgrade targets, local reachability analysis, and 27 MCP intelligence tools.",
+  "owner": {
+    "name": "Phoenix Security",
+    "email": "admin@phoenix.security",
+    "url": "https://phoenix.security"
+  },
+  "plugins": [
+    {
+      "name": "phoenix-blue-intelligence",
+      "source": "./",
+      "description": "Scan dependencies for CVEs, get evidence-backed upgrade targets, and measure locally whether the vulnerable code is actually reachable. Includes the Phoenix MCP server.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "name": "Phoenix Security",
+        "email": "admin@phoenix.security"
+      },
+      "homepage": "https://phxintel.security",
+      "repository": "https://github.com/securityphoenix/phoenix-blue-ingelligence-skills",
+      "keywords": [
+        "security", "vulnerability", "cve", "sca", "sbom",
+        "supply-chain", "reachability", "dependencies", "phoenix"
+      ],
+      "skills": [
+        "./skills/phoenix-library-upgrade",
+        "./skills/phoenix-cve-intel"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "phoenix": {
+      "command": "python3",
+      "args": ["/ABSOLUTE/PATH/TO/phoenix-blue-ingelligence-skills/scripts/phoenix_mcp_bridge.py"],
+      "env": {
+        "MCP_HTTP_URL": "${PHOENIX_MCP_URL}",
+        "MCP_API_KEY": "${PHOENIX_API_KEY}",
+        "MCP_HTTP_TIMEOUT": "60"
+      }
+    }
+  }
+}

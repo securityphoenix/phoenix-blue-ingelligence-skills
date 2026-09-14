@@ -1,0 +1,29 @@
+{
+  "name": "phoenix-blue-intelligence",
+  "version": "1.0.0",
+  "description": "Phoenix Security Blue vulnerability intelligence. Scan dependencies for CVEs, get evidence-backed safe-upgrade targets, and measure locally whether the vulnerable function is actually called.",
+  "author": {
+    "name": "Phoenix Security"
+  },
+  "homepage": "https://phxintel.security",
+  "license": "MIT",
+  "keywords": [
+    "security", "vulnerability", "cve", "sca", "sbom",
+    "supply-chain", "reachability", "dependencies", "upgrade", "phoenix"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Phoenix Blue Intelligence",
+    "shortDescription": "Find vulnerable libraries and what to upgrade to",
+    "longDescription": "Ask which libraries in your project are vulnerable, which CVEs affect the pinned version, whether the dependency is direct or transitive, whether your code actually calls the vulnerable function, and which version to upgrade to. Answers come from the Phoenix Security intelligence platform; reachability is measured locally in your repository.",
+    "developerName": "Phoenix Security",
+    "category": "Engineering",
+    "capabilities": ["Read"],
+    "websiteURL": "https://phxintel.security",
+    "defaultPrompt": [
+      "Scan my lockfile for vulnerable libraries and tell me what to upgrade to",
+      "Is this CVE reachable from my code, or only a transitive dependency?",
+      "Which of my dependencies are actively exploited in the wild?"
+    ]
+  }
+}

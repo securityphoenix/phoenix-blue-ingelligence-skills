@@ -1,0 +1,4 @@
+interface:
+  display_name: "Phoenix Library Upgrade"
+  short_description: "Find vulnerable libraries and what version to upgrade to"
+  default_prompt: "Scan this project's lockfile with the Phoenix library upgrade skill. Report which libraries are vulnerable, which CVEs affect the pinned version, whether each is a direct or transitive dependency, whether this code actually calls the vulnerable function, and the safe upgrade target with its corroboration caveat. Never clear a finding on reachability evidence."

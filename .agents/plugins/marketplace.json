@@ -1,0 +1,20 @@
+{
+  "name": "phoenix-blue-intelligence",
+  "interface": {
+    "displayName": "Phoenix Blue Intelligence"
+  },
+  "plugins": [
+    {
+      "name": "phoenix-blue-intelligence",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Engineering"
+    }
+  ]
+}

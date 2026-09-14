@@ -1,0 +1,15 @@
+# Secrets. Never commit these.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# .mcp.json IS the Claude Code plugin manifest and is tracked on purpose --
+# it holds only ${VAR} references, never a key. Local overrides are not.
+.mcp.local.json
+codex-mcp-server.local.toml
+
+__pycache__/
+*.pyc
+.DS_Store

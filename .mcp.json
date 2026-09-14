@@ -1,0 +1,11 @@
+{
+  "phoenix": {
+    "command": "python3",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/phoenix_mcp_bridge.py"],
+    "env": {
+      "MCP_HTTP_URL": "${PHOENIX_MCP_URL}",
+      "MCP_API_KEY": "${PHOENIX_API_KEY}",
+      "MCP_HTTP_TIMEOUT": "60"
+    }
+  }
+}
