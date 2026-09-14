@@ -202,7 +202,89 @@ are server-side. Do not work around them.
 
 ---
 
-## 6. Updating
+## 6. Pinning a version
+
+Every release is a git tag, `vMAJOR.MINOR.PATCH`. The version in all three
+manifests matches the tag. See [CHANGELOG.md](../CHANGELOG.md).
+
+**Pin to a tag. Never depend on a branch.** `main` moves.
+
+### Route A — list this plugin in your own marketplace (recommended)
+
+If your team already runs a marketplace, add an entry pinned by `ref`. This is
+the mechanism the official Claude Code marketplace uses.
+
+```json
+{
+  "name": "phoenix-blue-intelligence",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/securityphoenix/phoenix-blue-ingelligence-skills.git",
+    "path": ".",
+    "ref": "v1.0.0"
+  },
+  "description": "Phoenix Blue vulnerability intelligence",
+  "version": "1.0.0"
+}
+```
+
+Add `"sha": "<full commit sha>"` beside `ref` to pin immutably. A tag can be
+moved by whoever owns the repository; a sha cannot.
+
+Get the sha for a tag:
+
+```bash
+git ls-remote https://github.com/securityphoenix/phoenix-blue-ingelligence-skills.git refs/tags/v1.0.0
+```
+
+### Route B — clone at the tag, add the local path
+
+Works in both agents, needs no marketplace of your own.
+
+```bash
+git clone --branch v1.0.0 --depth 1 \
+  https://github.com/securityphoenix/phoenix-blue-ingelligence-skills.git \
+  phoenix-blue-v1.0.0
+```
+
+Claude Code:
+
+```
+/plugin marketplace add /absolute/path/to/phoenix-blue-v1.0.0
+/plugin install phoenix-blue-intelligence@phoenix-blue-intelligence
+```
+
+Codex, in `~/.codex/config.toml`:
+
+```toml
+[marketplaces.phoenix-blue-intelligence]
+source_type = "local"
+source = "/absolute/path/to/phoenix-blue-v1.0.0"
+```
+
+The clone stays at `v1.0.0` until you check out a different tag. Nothing
+updates it behind you.
+
+### Route C — unpinned
+
+```
+/plugin marketplace add securityphoenix/phoenix-blue-ingelligence-skills
+```
+
+Tracks the default branch and moves when we release. Fine for trying it out.
+Do not use it in CI or in a shared team config.
+
+### Checking what you have
+
+```bash
+claude plugin list          # shows the installed version
+```
+
+Codex records `last_revision` per marketplace in `~/.codex/config.toml`.
+
+---
+
+## 7. Updating
 
 **Claude Code:**
 
@@ -221,7 +303,7 @@ Codex records `last_updated` and `last_revision` per marketplace in
 
 ---
 
-## 7. Removing
+## 8. Removing
 
 **Claude Code:**
 

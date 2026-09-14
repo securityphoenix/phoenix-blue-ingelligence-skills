@@ -11,13 +11,18 @@ affect the pinned versions, whether your code actually reaches the vulnerable
 function, and which version to upgrade to. The answers come from Phoenix and
 from your own repository — not from the model's memory.
 
-**Install:** see [docs/INSTALL.md](docs/INSTALL.md). This repository is a
-marketplace for both agents.
+**Current release: [v1.0.0](https://github.com/securityphoenix/phoenix-blue-ingelligence-skills/releases/tag/v1.0.0)** · [Changelog](CHANGELOG.md) · [Install](docs/INSTALL.md)
+
+This repository is a marketplace for both agents.
 
 ```
 /plugin marketplace add securityphoenix/phoenix-blue-ingelligence-skills     # Claude Code
 /plugins marketplace add https://github.com/securityphoenix/phoenix-blue-ingelligence-skills.git   # Codex
 ```
+
+Those two track the default branch. For CI or a shared team config, **pin to a
+tag** instead — see
+[Pinning a version](docs/INSTALL.md#6-pinning-a-version).
 
 ---
 
