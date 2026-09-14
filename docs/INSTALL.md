@@ -231,10 +231,16 @@ the mechanism the official Claude Code marketplace uses.
 Add `"sha": "<full commit sha>"` beside `ref` to pin immutably. A tag can be
 moved by whoever owns the repository; a sha cannot.
 
-Get the sha for a tag:
+Get the sha for a tag. Note the `^{}` — these are **annotated** tags, so the
+bare ref returns the tag object's own sha, not the commit it points at.
+Dereference it, or you will pin to the wrong object:
 
 ```bash
-git ls-remote https://github.com/securityphoenix/phoenix-blue-ingelligence-skills.git refs/tags/v1.0.0
+git ls-remote https://github.com/securityphoenix/phoenix-blue-ingelligence-skills.git 'refs/tags/v1.0.0^{}'
+```
+
+```
+cbc94450b78016d4529dc72c07b47c2f538ab45b    refs/tags/v1.0.0^{}
 ```
 
 ### Route B — clone at the tag, add the local path
